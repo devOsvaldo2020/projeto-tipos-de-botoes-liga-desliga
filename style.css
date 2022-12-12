@@ -1,0 +1,51 @@
+.group{
+    background-color: #333;
+    display: flex;
+}
+
+.trocar input {
+    display: none;
+}
+
+.trocar label {
+    display: block;
+   
+    width: 60px;
+    height: 30px;
+    padding: 3px;
+    border-radius: 15px;
+    border: 2px solid #7e8382;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.trocar label::after {
+    content: "";
+    display: inherit;
+    width: 20px;
+    height: 20px;
+    border-radius: 12px;
+    background-color: #7e8382;
+    transition: 0.3s;
+}
+
+.trocar input:checked~label {
+    border-color: #25c89c;
+}
+
+
+.trocar input:checked~label::after {
+    translate: 30px 0;
+    background-color: #25c89c;
+}
+
+.trocar input:disabled ~label{
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.trocar.quadrado label,
+.trocar.quadrado label::after{
+    border-radius: 0;
+}
+
